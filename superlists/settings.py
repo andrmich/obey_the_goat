@@ -11,7 +11,7 @@ if 'DJANGO_DEBUG_FALSE' in os.environ:
 else:
     DEBUG = True
     SECRET_KEY = '#q-_e#=!h8#@f6#0tg8_266336q1f*i8_&hgmmwi)+)wl0%n5^'
-    ALLOWED_HOSTS = []
+    ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     #'django.contrib.admin',
