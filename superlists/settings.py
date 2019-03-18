@@ -1,16 +1,18 @@
 import os
-import environ
 
+# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-env = environ.Env(
-    # set casting, default value
-    DEBUG=(bool, True)
-)
-environ.Env.read_env()
-DEBUG = env('DEBUG')
-SECRET_KEY = env('SECRET_KEY')
 
-ALLOWED_HOSTS = ['*']
+
+if 'DJANGO_DEBUG_FALSE' in os.environ:
+    DEBUG = False
+    SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
+    ALLOWED_HOSTS = [os.environ['SITENAME']]
+else:
+    DEBUG = True
+    SECRET_KEY = '#q-_e#=!h8#@f6#0tg8_266336q1f*i8_&hgmmwi)+)wl0%n5^'
+    ALLOWED_HOSTS = []
+
 INSTALLED_APPS = [
     #'django.contrib.admin',
     'django.contrib.auth',
