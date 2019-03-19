@@ -1,3 +1,4 @@
 django==1.11.13
 django-environ
 selenium==3.141.0
+gunicorn==19.9.0
