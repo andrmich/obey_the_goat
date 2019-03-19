@@ -13,3 +13,4 @@ __pychache__
 /__pychache__
 functional_tests/__pycache__
 lists/migrations/__pycache__
+.env
